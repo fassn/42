@@ -1,0 +1,51 @@
+<- Matrix ---------------------------------------------------------------------
+The Matrix class handles matrices.
+
+An instance can be constructed with an array using the mandatory 'preset' key in conjunction with other keys
+depending on the value of 'preset'.
+'preset' => IDENTITY
+new Matrix( array( 'preset' => Matrix::IDENTITY ) );
+Constructs an Identity matrix.
+
+'preset' => SCALE
+In conjunction with the 'scale' key representing the scale factor.
+new Matrix( array( 'preset' => Matrix::SCALE, 'scale' => 10 ) );
+Constructs a Scale matrix.
+
+'preset' => RX or RY or RZ
+In conjunction with the 'angle' key representing the angle of the rotation in Radians.
+new Matrix( array( 'preset' => Matrix::RX, 'angle' => 60 ) );
+Constructs a Rotation X, Y or Z matrix.
+
+'preset' => TRANSLATION
+In conjunction with the 'vtc' key representing the translation Vector object.
+$vtc = new Vector( array( 'dest' => new Vertex ( array ( 'x' => 0, 'y' => 0, 'z' => 0 ) ) ) );
+new Matrix( array( 'preset' => Matrix::TRANSLATION, 'vtc' => $vtc ) );
+Constructs a Translation matrix.
+
+'preset' => PROJECTION
+In conjunction with the 4 'fov', 'ratio', 'near', 'far' keys representing respectively:
+- the field of view in Degrees.
+- the ratio of the projected image.
+- the close clipping plane of the projection.
+- the far clipping plane of the projection.
+new Matrix( array( 'preset' => Matrix::PROJECTION,
+    'fov' => 60,
+    'ratio' => 640/480,
+    'near' => 1.0,
+    'far' => -50.0 ) );
+Constructs a Projection matrix.
+
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Vertex      transformVertex( Vertex $vtx )
+Returns the Vertex transformed by the Matrix.
+
+Matrix      mult (  Matrix $rhs )
+Returns the Matrix product of the 2 matrices.
+
+Array       getMatrix()
+Returns the values of the current Matrix in $array[4][4].
+--------------------------------------------------------------------- Matrix ->

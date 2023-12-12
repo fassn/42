@@ -1,0 +1,1 @@
+SELECT `title`, `summary` from `film` WHERE `summary` LIKE '%Vincent%' ORDER BY `id_film`;

@@ -1,0 +1,5 @@
+#!/bin/sh
+echo 'username to delete?'
+read user
+pkill -u $user
+userdel -r $user

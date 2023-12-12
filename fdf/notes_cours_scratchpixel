@@ -1,0 +1,99 @@
+www.scratchpixel.com
+
+GEOMETRY
+1.Points, Vectors and Normals
+- Points and Vectors are both written with (x, y, z) coordinates.
+- Homogeneous points are written (x, y, z, w).
+- 2 Vectors holding the same direction and length but in different places in space are equal.
+- a Normal is the technical term to describe the orientation of a surface of a geometric object at a point on that surface.
+
+
+2.Coordinate Systems
+- the master coordinate system in a multi coordinate systems is called the World coordinate system.
+- the same point can be described with different coordinates from different coordinate systems.
+- the 3 axes of a coordinate system form what we call the Basis.
+- the only thing that defines the handedness of the coordinate system is the orientation of the left (or right) vector relative to the up and forward vectors, regardless of what these axes represent (x, y or z).
+- Being able to determine if a coordinate system is right or left handed is important.
+- Scratchpixel tutorials used a right-hand coordinate system.
+
+
+3.Math Operations on Points and Vectors
+- Norm (length) of a vector can be calculated such as:
+||V|| = sqrt(Vx * Vx + Vy * Vy + Vz * Vz)
+- unit vector = normalized vector = vector of length 1
+- Scalar product and cross product are 2 different things!
+- Scalar product of 2 vectors can be calculated such as:
+A.B = Ax*Bx + Ay*By + Az*Bz
+- Cross product of 2 vectors can be calculated such as:
+AxB = C where	Cx = Ay * Bz - Az * By
+				Cy = Az * Bx - Ax * Bz
+				Cz = Ax * By - Az * Bx
+- Cross product is anticommunicative: if AxB = C then BxA = -C
+
+
+4. Matrices
+- Matrices simplify transformations of points/vectors.
+- 2 matrices can be multiplied only if the number of COLUMNS of the first matrix is equal to the number of ROWS of the second matrix. Matrices m x p and p x n can be multiplied.
+- To compute M3(1,2) we select all the coefficients of the second row in M1 (where M1 is a 4x4 matrix) and all the coefficients of the third column in M2 (where M2 is also a 4x4 matrix) such as:
+M3(ij) = 	M1(i0)*M2(0j) + M1(i1)*M2(1j) + M1(i2)*M2(2j) + M1(i3)*M2(3j)
+			where i and j are the indexes within the matrices
+- Matrix multiplication is not communicative: M1*M2 is not the same as M2*M1
+
+
+5. How Does Matrix Work:Part1
+- A point or vector can be considered a 1x3 matrix: [xyz].
+- A point multiplied by a matrix is a transformed point.
+- Consider a 3x3 matrix:
+		[c00 c01 c02]
+		[c10 c11 c12]
+		[c20 c21 c22]
+- A point is multiplied by a matrix such as:
+		Pt.x = P.x * c00 + P.y * c10 + P.z * c20
+		Pt.y = P.x * c01 + P.y * c11 + P.z * c21
+		Pt.z = P.x * c02 + P.y * c12 + P.z * c22
+- The identity matrix or unit matrix is a square matrix whose coefficients are all 0 excepted the coefficients along the diagonal which are set to 1 such as:
+	[1 0 0]
+	[0 1 0]
+	[0 0 1]
+- The result of P multiplied by the identity matrix is P.
+- Consequently from the identity matrix, the scaling matrix have its scaling factors such as:
+	[Sx 0 0]
+	[0 Sy 0]
+	[0 0 Sz]
+						[1 0 0]
+ex: if P(1, 2, 3) and S	[0 2 0]
+						[0 0 3]
+then: Pt(1, 4, 9)
+
+
+6. How Does Matrix Work:Part2
+- Each row of a matrix represents an axis of a local coordinate system.
+
+
+7. Transforming Points and Vectors
+- A homogeneous point is a point represented by a 1x4 matrix: (x, y, z, 1)
+- Translation value is held in an extended 4x4 Matrix within in its 4th row such as:
+		[c00 c01 c02 c03]
+		[c10 c11 c12 c13]
+		[c20 c21 c22 c23]
+		[c30 c31 c32 c33]
+- The point-matrix multiplication has now one more line of calculation such as:
+		Pt.x = P.x * c00 + P.y * c10 + P.z * c20 + c30
+		Pt.y = P.x * c01 + P.y * c11 + P.z * c21 + c31
+		Pt.z = P.x * c02 + P.y * c12 + P.z * c22 + c32
+		Pt.w = P.x * c03 + P.y * c13 + P.z * c23 + c33
+
+
+8. Row Major vs Column Major Vector
+- 1x3 matrix is row-major, 3x1 matrix is column major
+- Whether we use row-major or column-major order, the matrix needs to be transposed such as:
+P * M with row-major: 		[a b c]
+							[d e f]
+							[g h i]
+M * P with column-major:	[a d g]
+							[b e h]
+							[c f i]
+
+
+9. Matrix Operations
+- 

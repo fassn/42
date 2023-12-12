@@ -1,0 +1,43 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles vertices.
+
+An instance can be constructed using mandatory x, y and, z values:
+new Vertex( array( 'x' => 1, 'y' => 2, 'z' => 3 );
+
+It can also be constructed using an optional Color object to define the color of the vertex
+$white = new Color ( array( 'red' => 255, 'green' => 255, 'blue' => 255 ));
+new Vertex ( array( 'x' => 1, 'y' => 2, 'z' => 3, 'color' => $white );
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+float/int   getX();
+Returns the X coordinate of the vertex.
+
+float/int   getY();
+Returns the Y coordinate of the vertex.
+
+float/int   getZ();
+Returns the Z coordinate of the vertex.
+
+float/int   getW();
+Returns the W coordinate of the vertex.
+
+Color       getColor();
+Returns the Color object associated with the vertex.
+
+setX(float/int $value);
+Sets the X coordinate of the vertex.
+
+setY(float/int $value);
+Sets the Y coordinate of the vertex.
+
+setZ(float/int $value);
+Sets the Z coordinate of the vertex.
+
+setW(float/int $value);
+Sets the W coordinate of the vertex.
+
+setColor(Color $value);
+Sets the Color object associated with the vertex.
+---------------------------------------------------------------------- Vertex ->

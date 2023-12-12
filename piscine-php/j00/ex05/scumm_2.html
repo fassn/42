@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SCUMM</title>
+	<link rel="stylesheet" href="scumm.css">
+	<script>
+		function myFunction() {
+			document.getElementById("voir").innerHTML = "un petit robot semble \
+			tenir un livre bleu dans sa main";
+		}
+		function mytool() {
+			window.location.href = 'help.html';
+		}
+		function ft_avance() {
+			document.getElementById("avancer").innerHTML = "un petit robot \
+			vous barre la route";
+		}
+		function ft_prendre() {
+			document.getElementById("voir").innerHTML = "vous prenez de force \
+			le livre du petit robot";
+			window.location.href = 'scumm_2_livre.html';
+		}
+		function ft_parler() {
+			document.getElementById("to_talk").innerHTML = "Je suis marvin que \
+			puis-je faire pour vous";
+		}
+	</script>
+</head>
+
+<body>
+	<div class="grey_bar top_bar">
+		<a href="scumm.html"><img id="day_of" src="resources/day_of_the_42.png" alt="title" title="day_of_the_42"></a>
+		<img id="loupe" src="resources/loupe.png" alt="loupe" title="loupe">
+
+		<div id="top_link">
+			<a href="http://www.disney.com" id="disney">
+				<img id="reload" src="resources/reload.png" alt="icone_de_reload" title="reload">
+			</a>
+			<a href="http://www.relaischateaux.com" id="chateau">
+				<img id="close" src="resources/close.gif" alt="icone_close" title="close">
+			</a>
+		</div>
+	</div>
+
+	<div class="grey_bar left_bar">
+		<button id="oeil" onclick="ft_avance()">
+			<img src="resources/arrow.png" alt="Avancer" title="Avancer" id="arrow">
+		</button>
+		<p id="avancer"></p>
+		<button id="oeil" onclick="ft_prendre()">
+			<img src="resources/main.png" alt="Prendre" title="Prendre" id="main">
+		</button>
+		<button id="oeil" onclick="myFunction()">
+			<img src="resources/oeil.png" alt="Regarder" title="Regarder" id="oeil">
+		</button>
+		<p id="voir"></p>
+		<button id="outil" onclick="mytool()">
+			<img src="resources/outil.png" alt="Utiliser" title="Utiliser" id="outil">
+		</button>
+		<img src="resources/chat-icon.png" alt="Parler" title="Parler" id="chat">
+	</div>
+	<div class="grey_bar middle_bar">
+		<img id="cluster" src="resources/cluster01.jpg" title="cluster" alt="image_of_a_cluster">
+		<a id="ikea" href="http://www.ikea.com"></a>
+		<a id="apple" href="http://www.apple.com"></a>
+		<a id="marvin" href="game_over.html"> <img id="marv" src="resources/marvin.jpg" alt="marvin" title="marvin"> </a>
+	</div>
+	<div class="grey_bar right_bar">
+	</div>
+
+	<div id="tool_string" class="chat_box">
+		<p>Vous <span id="enter">entrez</span> alors dans une grande piece remplie <span id="underline" >d'ordinateurs</span>...</p>
+		<p id="reponse">- Bonjour, vous êtes nouveau ici ?</p>
+		<p id="to_talk"></p>
+		<form action="#" onsubmit="ft_parler();return false">
+			<input type="text" id="formu">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+- mettre tout le script en 1 avec de belles variables qui jouent sur lensemble des scripts
+=> rendre le bordel bien modulable
+
+- configurer iptables pour apache. des explication donnees pour ufw ici: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04#step-3-adjust-the-firewall
+
+- DOS mon serveur et voir sil se defend bien
+
+- scanner les ports de mon server et voir sils sont bien proteges
+
+

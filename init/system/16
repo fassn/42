@@ -1,0 +1,8 @@
+cron permet de planifier des taches avec des horaires reguliers.
+Il existe plusieurs facons de proceder, l'une d'elle consiste a modifier
+le fichier de cron jobs lie a l'utilisateur utilise avec crontab -e
+Une fois dans ce fichier la ligne suivante:
+* * * * * mkdir /home/backup &> /dev/null
+permettrait de creer toutes les minutes le dossier /home/backup
+l'appendice &> /dev/null permet d'eviter la notification par email. (utile
+pour des taches triviales)

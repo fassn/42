@@ -1,0 +1,9 @@
+Je ne possede pas les droits d'administration pour effectuer la manipulation
+mais je pourrais modifier le fichier /etc/hosts pour faire pointer 
+intra.42.fr vers l'ip 46.19.122.85
+
+Le fichier ressemblerait a ca:
+127.0.0.1		localhost
+255.255.255.255 broadcasthost
+::1             localhost
+46.19.122.85	intra.42.fr

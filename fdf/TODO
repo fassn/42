@@ -1,0 +1,9 @@
+- remove <stdio.h>
+- gestion d'erreur du parsing
+- a propos de la resolution du probleme concernant la presence ou non d'un point dans un triangle:
+It's worth noting that any methods discussed here are valid in 3D space as well.
+They just need to be preceded by a coordinate transformation (and an appropriate projection of the point on the plane of the triangle).
+A triangle is a 2-dimensional object.
+- utiliser le flag d'optimisation -O, -O2 ou -O3 dans le Makefile pour optimiser l'accession des valeurs non-contigues en memoire
+dans les iterateurs, ce qui peut notamment arriver si j'opere des calculs matriciels en row-major au lieu de column-major.
+d'apres https://stackoverflow.com/questions/19689014/gcc-difference-between-o3-and-os -O2 semble le flag le plus adapte.

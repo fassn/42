@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SCUMM</title>
+	<link rel="stylesheet" href="scumm.css">
+	<script>
+		function myFunction() {
+			window.location.href = 'help_livre_finish.html';
+		}
+		function myFunction() {
+			window.location.href = 'win.html';
+		}
+	</script>
+</head>
+
+<body>
+	<div class="grey_bar top_bar">
+		<a href="scumm.html"><img id="day_of" src="resources/day_of_the_42.png" alt="title" title="day_of_the_42"></a>
+		<img id="loupe" src="resources/loupe.png" alt="loupe" title="loupe">
+
+		<div id="top_link">
+			<a href="http://www.disney.com" id="disney">
+				<img id="reload" src="resources/reload.png" alt="icone_de_reload" title="reload">
+			</a>
+			<a href="http://www.relaischateaux.com" id="chateau">
+				<img id="close" src="resources/close.gif" alt="icone_close" title="close">
+			</a>
+		</div>
+	</div>
+
+	<div class="grey_bar left_bar">
+		<a href="scumm_2.html"> <img src="resources/arrow.png" alt="Avancer" title="Avancer" id="arrow"></a>
+		<img src="resources/main.png" alt="Prendre" title="Prendre" id="main">
+		<button id="oeil" onclick="myFunction()">
+			<img src="resources/oeil.png" alt="Regarder" title="Regarder" id="oeil">
+		</button>
+		<img src="resources/outil.png" alt="Utiliser" title="Utiliser" id="outil">
+	<p>Marvin vous aide a vous connecter sur un poste</p>
+		<img src="resources/chat-icon.png" alt="Parler" title="Parler" id="chat">
+	</div>
+	<div class="grey_bar middle_bar">
+		<img id="cluster" src="resources/help.jpg" title="cluster" alt="image_of_a_cluster">
+		<a id="ikea" href="http://www.ikea.com"></a>
+		<a id="apple" href="http://www.apple.com"></a>
+	</div>
+
+	<div class="grey_bar right_bar">
+		<button id="oeil" onclick="ft_livre()">
+			<img src="resources/book.png" alt="livre" title="book" id="book">
+		</button>
+		<p>"vous ouvrez le livre, un flash vous ebloui et vous transmet des 
+			connaissance infinie";
+		</p>
+	</div>
+
+	<div class="chat_box">
+		<p>Vous <span id="enter">entrez</span> alors dans une grande piece remplie <span id="underline" >d'ordinateurs</span>...</p>
+		<p id="reponse">- Bonjour, vous êtes nouveau ici ?</p>
+		<form>
+			<input type="text" id="formu">
+			<input type="submit" value="Repondre" id="repondre">
+		</form>
+	</div>
+</body>
+
+</html>

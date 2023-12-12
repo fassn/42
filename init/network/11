@@ -1,0 +1,3 @@
+le NAT(nat-1) (Network Address Translation)
+fait le lien entre le reseau local et l'exterieur. 
+Son ip est 10.60.1.11

@@ -1,0 +1,16 @@
+- overloading (utilisation d'array pour passer des arguments au constructeur)
+- __get / __set
+- __tostring
+- __invoke
+- clone / __clone
+- class constants
+- static methods
+- static attributes
+- __call / __callstatic
+- method override
+- protected
+- abstract class/methods
+- interfaces
+- traits
+- final keyword
+- Exception

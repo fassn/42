@@ -1,0 +1,9 @@
+echo "reponse (a):"
+ifconfig en0 inet | grep "broadcast" | cut -d ' ' -f 6
+
+# montre l'ipv4 et le submask pour l'interface Ethernet
+# il convient de lire le submask et d'en deduire que le range d'ip
+# correspond aux classes n'etant pas couvertes par le submask.
+# Sur mon mac, les classes C et D ne sont pas couvertes par le submask.
+echo "reponse (b):"
+ifconfig en0 inet | grep "broadcast" | cut -d ' ' -f1,2,3,4 | awk '{$1=$1};1'

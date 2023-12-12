@@ -1,0 +1,3 @@
+- optimiser les calculs au carre
+
+nb: flag d'opti : -flto -O2 

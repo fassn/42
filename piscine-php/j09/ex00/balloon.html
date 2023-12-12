@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon</title>
+</head>
+<body>
+    <div id="balloon" style="width: 200px; height: 200px; border-radius: 50%; background: rgb(255, 0, 0)"></div>
+</body>
+<script>
+    let balloon = document.getElementById("balloon");
+    balloon.onclick = function () {
+        if (parseInt(balloon.style.width) <= 410) {
+            let width = parseInt(balloon.style.width);
+            let height = parseInt(balloon.style.height);
+            balloon.style.width = width + 10 + 'px';
+            balloon.style.height = height + 10 + 'px';
+        }
+        else {
+            balloon.style.width = '200px';
+            balloon.style.height = '200px';
+        }
+        if (balloon.style.background == 'rgb(255, 0, 0)')
+            balloon.style.background = '#00ff00';
+        else if (balloon.style.background == 'rgb(0, 255, 0)')
+            balloon.style.background = '#0000ff';
+        else if (balloon.style.background == 'rgb(0, 0, 255)')
+            balloon.style.background = '#ff0000';
+    }
+    balloon.onmouseleave = function () {
+        if (parseInt(balloon.style.width) >= 205) {
+            let width = parseInt(balloon.style.width);
+            let height = parseInt(balloon.style.height);
+            balloon.style.width = width - 5 + 'px';
+            balloon.style.height = height - 5 + 'px';
+        }
+        else {
+            balloon.style.width = '200px';
+            balloon.style.height = '200px';
+        }
+        if (balloon.style.background == 'rgb(255, 0, 0)')
+            balloon.style.background = '#0000ff';
+        else if (balloon.style.background == 'rgb(0, 255, 0)')
+            balloon.style.background = '#ff0000';
+        else if (balloon.style.background == 'rgb(0, 0, 255)')
+            balloon.style.background = '#00ff00';
+    }
+</script>
+</html>

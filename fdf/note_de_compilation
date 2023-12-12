@@ -1,0 +1,2 @@
+gcc -g3 -I /usr/local/include main.c color_gradient.c helpers.c mlx_functions.c parsing.c projections.c trace_segment.c libft/libft.a -L /usr/local/lib -lmlx -lXext -lX11
+gcc -g3 -I /usr/local/include main.c color_gradient.c helpers.c mlx_functions.c parsing.c projections.c trace_segment.c libft/libft.a -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit

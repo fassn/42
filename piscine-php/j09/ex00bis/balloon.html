@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon</title>
+</head>
+<body>
+    <div id="balloon" style="width: 200px; height: 200px; border-radius: 50%; background-color: rgb(255, 0, 0)"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let balloon = $('#balloon');
+        balloon.click(function () {
+            if (parseInt(balloon.css('width')) <= 410) {
+                let width = parseInt(balloon.css('width'));
+                let height = parseInt(balloon.css('height'));
+                balloon.css('width', width + 10 + 'px');
+                balloon.css('height', height + 10 + 'px');
+            }
+            else {
+                balloon.css('width', '200px');
+                balloon.css('height', '200px');
+            }
+            if (balloon.css('background-color') === 'rgb(255, 0, 0)')
+                balloon.css('background-color', '#00ff00');
+            else if (balloon.css('background-color') == 'rgb(0, 255, 0)')
+                balloon.css('background-color', '#0000ff');
+            else if (balloon.css('background-color') == 'rgb(0, 0, 255)')
+                balloon.css('background-color', '#ff0000');
+       });
+        balloon.mouseleave(function () {
+            if (parseInt(balloon.css('width')) >= 205) {
+                let width = parseInt(balloon.css('width'));
+                let height = parseInt(balloon.css('height'));
+                balloon.css('width', width - 5 + 'px');
+                balloon.css('height', height - 5 + 'px');
+            }
+            else {
+                balloon.css('width', '200px');
+                balloon.css('height', '200px');
+            }
+            if (balloon.css('background-color') === 'rgb(255, 0, 0)')
+                balloon.css('background-color', '#0000ff');
+            else if (balloon.css('background-color') == 'rgb(0, 255, 0)')
+                balloon.css('background-color', '#ff0000');
+            else if (balloon.css('background-color') == 'rgb(0, 0, 255)')
+                balloon.css('background-color', '#00ff00');
+        })
+    });
+</script>
+</html>

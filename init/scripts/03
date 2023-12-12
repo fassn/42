@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [[ $EUID -ne 0 ]]; then
+	su
+fi
+apt install net-tools
+apt install dnsutils
+apt install vim
+if [ ! -f ~/.vimrc ];then
+	echo "syntax on
+set nu
+set colorcolumn=80" >> ~/.vimrc
+fi

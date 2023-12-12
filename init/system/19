@@ -1,0 +1,2 @@
+echo "les services suivants sont des daemon" &&
+ls /etc/init.d/

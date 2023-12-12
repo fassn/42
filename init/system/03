@@ -1,0 +1,4 @@
+hostnamectl set-hostname new_name changera le nom contenu dans le fichier
+/etc/hostname
+Il faudra egalement changer les occurences de l'ancien hostname dans le
+fichier /etc/hosts

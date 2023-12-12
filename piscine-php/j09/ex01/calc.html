@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+</head>
+<body>
+<input id="n1" type="text" value="">
+<select id="op">
+    <option value="1">+</option>
+    <option value="2">-</option>
+    <option value="3">*</option>
+    <option value="4">/</option>
+    <option value="5">%</option>
+</select>
+<input id="n2" type="text" value="">
+<input type="submit" name="submit" value="Try me!">
+</body>
+<script>
+    function isInt(n) {
+        return n % 1 === 0;
+    }
+
+    setInterval(function() {
+        alert('Please, use me...');
+    }, 30000);
+    let submit = document.getElementsByName('submit')[0];
+    submit.onclick = function () {
+        let n1 = parseFloat(document.getElementById('n1').value);
+        let n2 = parseFloat(document.getElementById('n2').value);
+        if (isNaN(n1) || !isInt(n1) || n1 < 0 || isNaN(n2) || !isInt(n2) || n2 < 0) {
+            alert('Error :(');
+        } else {
+            let op = document.getElementById('op');
+            op = parseInt(op.options[op.selectedIndex].value);
+            let r;
+            let error;
+            if (op === 1)
+                r = n1 + n2;
+            if (op === 2)
+                r = n1 - n2;
+            if (op === 3)
+                r = n1 * n2;
+            if (op === 4 || op === 5) {
+                if (n2 === 0) {
+                    error = 1;
+                    console.log("It’s over 9000!");
+                    alert("It’s over 9000!");
+                }
+                else {
+                    if (op === 4)
+                        r = n1 / n2;
+                    if (op === 5)
+                        r = n1 % n2;
+                }
+            }
+            if (!error) {
+                console.log(r);
+                alert(r);
+            }
+        }
+    }
+</script>
+</html>
